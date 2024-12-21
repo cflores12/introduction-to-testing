@@ -1,7 +1,27 @@
-export const add = () => {};
+export const add = (a, b) => {
+    return a + b;
+};
 
-export const subtract = () => {};
+export const subtract = (a = 0, b = 0) => {
+    if(Array.isArray(a)){
+        a = a.reduce((a, b) => {
+            return a - b;
+        })
+    }
 
-export const multiply = () => {};
+    return a - b;
+};
 
-export const divide = () => {};
+export const multiply = (a, b) => {
+    return a * b;
+};
+
+export const divide = (a, b) => {
+    const result = a / b;
+
+    if(result === Infinity) {
+        return null;
+    }
+
+    return result;
+};
